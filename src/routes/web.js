@@ -32,6 +32,8 @@ import {
 import patientController from "../controllers/PatientController";
 import specialtyController from "../controllers/specialtyController";
 
+import clinicController from "../controllers/clinicController";
+
 const router = express.Router();
 
 const initWebRoutes = (app) => {
@@ -71,6 +73,10 @@ const initWebRoutes = (app) => {
   router.post("/api/create-new-specialty", specialtyController.createSpecialty);
   router.get("/api/get-all-specialty", specialtyController.getAllSpecialty);
   router.get("/api/get-detail-specialty-by-id", specialtyController.getDetailSpecialtyById);
+
+  router.post("/api/create-new-clinic", clinicController.createClinic);
+  // router.get("/api/get-all-specialty", specialtyController.getAllSpecialty);
+  // router.get("/api/get-detail-specialty-by-id", specialtyController.getDetailSpecialtyById);
 
   return app.use("/", router);
 };
